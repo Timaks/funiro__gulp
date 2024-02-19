@@ -43,7 +43,6 @@ $darkGreyColor: #616161;
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===========================================================================================
 @import "null";
 body {
-  background-color: #f9f1e7;
   color: $mainColor;
   font-size: $fontSize;
   // блокировка скрола
@@ -101,13 +100,99 @@ body {
 @import "popup";
 @import "header";
 @import "footer";
-@import "home"; // главная страница
+//@import "home"; // главная страница
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
   flex: 1 1 auto;
 }
+.page__main-slider {
+}
+.main-slider {
+  background: #fcf8f3;
+}
+.main-slider__container {
+  position: relative;
+  @media (min-width: $md2){
+    &::before {
+      content: '';
+      background: #f9f1e7;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      right: 376px;
+      height: 100%;
+    }
+  }
+}
+
+.main-slider__body {
+  padding: 140px 0px 0px 0px;
+  position: relative;
+  z-index: 2;
+  @media (max-width: $md2){
+    padding: 80px 0px 0px 0px;
+  }
+  @media (max-width: $md3){
+    padding: 50px 0px 0px 0px;
+  }
+  @media (min-width: $md2){
+    display: flex;
+  }
+}
+.main-slider__content {
+  flex: 0 0 math.div(494, 1240) * 100%;
+}
+.content-main {
+  position: relative;
+  z-index: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: rgba( 255,255, 255, 0.72);
+  @include adaptiv-value("padding-top", 60, 15, 1);
+  @include adaptiv-value("padding-bottom", 60, 15, 1);
+  @media (min-width: $md2){
+    @include adaptiv-value("padding", 60, 1, 1);
+  }
+}
+.content-main__title {
+}
+.content-main__text {
+}
+.content-main__button {
+}
+.main-slider__slider {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.slider-main {
+}
+.slider-main__controls {
+}
+.controls-slider-main {
+}
+.controls-slider-main__dotts {
+}
+.controls-slider-main__arrows {
+}
+
+.slider-main__body {
+}
+.slider-main__slide {
+}
+.slider-main__image {
+}
+
+.slider-main__content {
+}
+.slider-main__title {
+}
+.slider-main__text {
+}
+.slider-main__price {
+}
+
 //===================================================================================================================================
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================

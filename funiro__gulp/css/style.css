@@ -205,7 +205,6 @@ h6 {
 */
 
 body {
-  background-color: #f9f1e7;
   color: #3a3a3a;
   font-size: 16;
 }
@@ -1391,6 +1390,43 @@ body.ie ._ibg img {
           flex: 1 1 auto;
 }
 
+.main-slider {
+  background: #fcf8f3;
+}
+
+.main-slider__container {
+  position: relative;
+}
+
+.main-slider__body {
+  padding: 140px 0px 0px 0px;
+  position: relative;
+  z-index: 2;
+}
+
+.main-slider__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 39.8387096774%;
+          flex: 0 0 39.8387096774%;
+}
+
+.content-main {
+  position: relative;
+  z-index: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: rgba(255, 255, 255, 0.72);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.main-slider__slider {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  min-width: 0;
+}
+
 @media (min-width: 767.98px) {
   .menu__list {
     display: -webkit-box;
@@ -1473,6 +1509,26 @@ body.ie ._ibg img {
 
   .search-form__icon {
     display: none;
+  }
+
+  .main-slider__container::before {
+    content: "";
+    background: #f9f1e7;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    right: 376px;
+    height: 100%;
+  }
+
+  .main-slider__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .content-main {
+    padding: 60px;
   }
 }
 
@@ -1578,6 +1634,20 @@ body.ie ._ibg img {
           ((100vw - 320px) / 950)
       );
   }
+
+  .content-main {
+    padding-top: calc(
+        15px + 45 *
+          ((100vw - 320px) / 950)
+      );
+  }
+
+  .content-main {
+    padding-bottom: calc(
+        15px + 45 *
+          ((100vw - 320px) / 950)
+      );
+  }
 }
 
 @media (max-width: 991.98pxpx) {
@@ -1626,6 +1696,10 @@ body.ie ._ibg img {
 
   .footer__menu {
     margin-top: 40px;
+  }
+
+  .main-slider__body {
+    padding: 80px 0px 0px 0px;
   }
 }
 
@@ -1781,6 +1855,10 @@ body.ie ._ibg img {
   .menu-footer__list {
     padding: 15px 0px 0px 0px;
   }
+
+  .main-slider__body {
+    padding: 50px 0px 0px 0px;
+  }
 }
 
 @media (max-width: 767.98px) and (max-width: 1270px) {
@@ -1794,6 +1872,15 @@ body.ie ._ibg img {
   .menu-footer__column {
     margin-bottom: calc(
         15px + 15 *
+          ((100vw - 320px) / 950)
+      );
+  }
+}
+
+@media (min-width: 991.98px) and (max-width: 1270px) {
+  .content-main {
+    padding: calc(
+        1px + 59 *
           ((100vw - 320px) / 950)
       );
   }
