@@ -1073,6 +1073,21 @@ window.onload = function(){
             document.querySelector('.search-form').classList.remove('_active');
         }
     }   
+    //header
+
+    const headerElement = document.querySelector('.header');
+//Intersection Observer  браузерный API, 
+//который позволяет асинхронно отслеживать пересечение элемента с его родителем или областью видимости документа (viewport).
+    const callback = (entries, observer) => {
+          if (entries[0].isIntersecting) {
+            headerElement.classList.remove('_scroll');
+          } else {
+            headerElement.classList.add('_scroll');
+          }
+      };
+
+    const headerObserver = new IntersectionObserver(callback);
+    headerObserver.observe(headerElement);
 }
 //let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');
 let forms = document.querySelectorAll('form');
