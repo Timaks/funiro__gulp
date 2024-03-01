@@ -113,13 +113,20 @@ function browserSync(done) {
     port: 3000,
   });
 }
+function json() {
+	return src(path.src.json)
+    //.pipe(plumber())
+		.pipe(dest(path.build.json))
+		.pipe(browsersync.stream());
+}
+
 // fn для Отслеж п/ф для обновл стр.
 function watchFiles() {
   // пути отслеж файлов
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
-  // gulp.watch([path.watch.json], json);
+  gulp.watch([path.watch.json], json);
   gulp.watch([path.watch.images], images);
 }
 // fn отчистки
@@ -461,7 +468,7 @@ function cb() {}
 // временно Стар
 let build = gulp.series(
   clean,
-  gulp.parallel(html, css, js, images, fonts),
+  gulp.parallel(html, css, js, json, images, fonts),
   fontsStyle
 );
 // Сценарий выполнения. РАЗРАБ (запуск/проверка робот.собн.)
@@ -481,6 +488,7 @@ exports.html = html;
 exports.css = css;
 // временно Стар
 exports.js = js;
+exports.json = json;
 // временно Стар
 exports.images = images;
 // временно Стар
