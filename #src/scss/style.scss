@@ -386,6 +386,10 @@ body {
 .products__more{
   border: 1px solid $orangeColor;
   min-width: 245px;
+  &._hold{
+    opacity: 0.4;
+    cursor: default;
+  }
 }
 
 
@@ -505,23 +509,28 @@ body {
   &:not(:last-child){
     margin: 0px 0px 24px 0px;
   }
+  &._hold{
+    opacity: 0.2;
+    cursor: default;
+  }
 }
+
 .actions-product__link{
   display: flex;
   align-items: center;
   color: inherit;
   font-weight: 600;
   transition: color 0.3s ease 0s;
-  &::before{
-    margin: 0px 10px 0px 0px;
-    font-size: 16px;
-  }
-  @media (any-hover: hover){
-    color: #fff;
-		&:hover{
-      color: $orangeColor;
+    &::before{
+      margin: 0px 10px 0px 0px;
+      font-size: 16px;
     }
-  }
-}  
+    @media (any-hover: hover){
+      color: #fff;
+      &:hover{
+        color: $orangeColor;
+      }
+    }
+}
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
