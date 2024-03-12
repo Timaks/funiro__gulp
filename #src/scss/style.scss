@@ -115,6 +115,8 @@ body {
 }
 .page__rooms {
 }
+.page__tips {
+}
 .main-slider {
   background: #fcf8f3;
 }
@@ -732,5 +734,110 @@ body {
     justify-content: center;
     padding: 15px 0px 0px 0px;
   }
+}
+
+//////////////////////////////////////////////
+
+.tips {
+  @include adaptiv-value("padding-top", 44, 30, 1);
+  @include adaptiv-value("padding-bottom", 44, 30, 1);
+
+}
+.tips__container {
+}
+._container {
+}
+.tips__title {
+ 
+}
+._title {
+}
+.tips__slider {
+}
+.slider-tips {
+  position: relative;
+
+}
+.slider-tips__body {
+  //решаем проблему обрезания тени
+  @include adaptiv-value("margin-left", -32, -15, 1);
+  @include adaptiv-value("margin-right", -32, -15, 1);
+  @include adaptiv-value("padding", 32, 15, 1);
+}
+._swiper {
+}
+.slider-tips__slide {
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease 0s;
+  @media (any-hover){
+    &:hover{
+      box-shadow: 0 0 32px rgba(97, 97, 97, 0.2);
+    }
+  }
+}
+.slider-tips__image {
+  padding: 0px 0px math.div(251, 391) * 100% 0px;
+}
+._ibg {
+}
+.slider-tips__content {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  flex: 1 1 auto;
+  align-items: flex-start;
+}
+.slider-tips__title {
+  flex: 1 1 auto;
+  color:  inherit;
+  font-weight: 600;
+  line-height: 120%;
+  @include adaptiv-value("font-size", 24, 18, 1);
+  transition: color 0.3s ease 0s;
+  &:not(:last-child){
+    margin: 0px 0px math.div(8, 24) * 1em 0px;
+  }
+  @media (any-hover){
+    &:hover{
+      color: $orangeColor;
+    }
+  }
+}
+.slider-tips__text {
+  color: $grayColor;
+  font-size: 14px;
+  line-height: 150%;
+}
+.slider-tips__dotts {
+  @include adaptiv-value("padding-top", 8, 0, 1);
+  justify-content: center;
+}
+.slider-tips__arrows {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  width: calc(100% - 48px) ;
+  left: 24px;
+  transform: translate(0px, -50%);
+  z-index: 5;
+  justify-content: space-between;
+  @media (min-width: $md1){
+    width: calc(100% + 48px) ;
+    left: -24px;
+  }
+  @media(max-width: $md3){
+    display: none;
+  }
+}
+.slider-arrows {
+}
+.slider-arrows__white {
+}
+.slider-arrows__prev {
+}
+._icon-arrow-down {
+}
+.slider-arrows__next {
 }
 //</ОСНОВНОЙ БЛОК>====================================================================================================
