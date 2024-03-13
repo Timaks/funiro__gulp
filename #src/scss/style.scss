@@ -95,7 +95,7 @@ body {
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 //@import "datepicker";
-//@import "lightgallery";
+@import "lightgallery";
 //@import "pagging";
 @import "popup";
 @import "header";
@@ -117,6 +117,9 @@ body {
 }
 .page__tips {
 }
+.page__furniture {
+}
+
 .main-slider {
   background: #fcf8f3;
 }
@@ -839,5 +842,96 @@ body {
 ._icon-arrow-down {
 }
 .slider-arrows__next {
+}
+
+/////////////////////////////////////////////////////////////
+
+
+.furniture {
+  @include adaptiv-value("padding-bottom", 85, 40, 1);
+}
+.furniture__container {
+}
+.furniture__label {
+  text-align: center;
+  color: $darkGreyColor;
+  line-height: 150%;
+  @include adaptiv-value("font-size", 20, 16, 1);
+  &:not(:last-child){
+    margin: 0px 0px math.div(8, 20)* 1em 0px;
+  }
+}
+.furniture__title {
+  margin: 0px 0px math.div(32, 40)* 1em 0px;
+  text-align: center;
+}
+._title {
+}
+.furniture__body {
+  position: relative;
+  @media (any-hover: none) {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+.furniture__items {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 16px;
+  @media (any-hover:hover) {
+    justify-content: center;
+  }
+}
+.furniture__column {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0ps -8px;
+  &:first-child{
+    justify-content: flex-end;
+  }
+}
+.furniture__row {
+  display: inline-grid;
+  padding:  0px 8px;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  gap: 16px;
+  &:not(:last-child){
+    margin: 0px 0px 16px 0px;
+  }
+}
+.row-furniture__item {
+  @media (any-hover: hover) {
+    img{
+      transition: all 0.8s ease 0s;
+      filter: grayscale(1);
+    }
+    :hover{
+      img{
+        filter: grayscale(0);
+      }
+    }
+  }
+}
+.row-furniture_left-top {
+  justify-content: end;
+  align-items: end;
+}
+
+.row-furniture_left-bottom {
+  justify-content: end;
+  align-items: start;
+}
+.row-furniture_center {
+  display: block;
+}
+.row-furniture_right-top {
+  align-items: end;
+}
+.row-furniture_right-bottom {
+  align-items: start;
 }
 //</ОСНОВНОЙ БЛОК>====================================================================================================
